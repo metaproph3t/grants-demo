@@ -13,7 +13,6 @@ import {
   SliderThumb,
   Flex,
   Container,
-  theme,
   extendTheme,
 } from '@chakra-ui/react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
@@ -33,7 +32,6 @@ const Home = () => {
   const [step, setStep] = useState(1);
   const [price, setPrice] = useState(0.5);
   const [averagePrice, setAveragePrice] = useState(0.5);
-  const [finalTVL, setFinalTVL] = useState(3);
 
   const nextStep = () => {
     if (step === 2) {
@@ -90,7 +88,7 @@ const Home = () => {
               Step 2: Market Prediction
             </Heading>
             <Text fontSize="xl" mb={4}>
-              DeFiChain doesn't have infinite funding, and so only wants to fund
+              DeFiChain doesn&apos;t have infinite funding and so only wants to fund
 		the most promising projects: those that would be able to amass
 		more than $5M in TVL within 3 months.
             </Text>
@@ -110,7 +108,7 @@ const Home = () => {
 		months, up to a $1 payout for $10M in TVL.
             </Text>
             <Text fontSize="xl" mb={4}>
-              The price of the UP contract reflects the market's expectation of the future TVL.
+              The price of the UP contract reflects the market&apos;s expectation of the future TVL.
             </Text>
             <Box mb={6}>
               <Text fontSize="xl" mb={2}>
@@ -179,7 +177,7 @@ const Home = () => {
                   Continuous trading allows traders to enter and exit the market at any time, enabling them to liquidate or adjust their positions based on new information.
                 </Text>
                 <Text fontSize="xl" mb={4}>
-                  Here's an example of how the UP contract price might fluctuate over time:
+                  Here&apos;s an example of how the UP contract price might fluctuate over time:
                 </Text>
                 <Box height="300px" mb={6}>
                   <ResponsiveContainer>
