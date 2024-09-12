@@ -32,6 +32,7 @@ const Home = () => {
   const [step, setStep] = useState(1);
   const [price, setPrice] = useState(0.5);
   const [averagePrice, setAveragePrice] = useState(0.5);
+  const [finalTVL, setFinalTVL] = useState(4.3);
 
   const nextStep = () => {
     if (step === 2) {
@@ -206,8 +207,31 @@ const Home = () => {
             <Heading as="h2" size="lg" mb={6}>
               Step 5: Payout Distribution
             </Heading>
+		<Box mb={6}>
+              <Text fontSize="xl" mb={2}>
+                Set Degen Vault TVL ($0 - $10M):
+              </Text>
+              <Flex align="center">
+                <Slider
+                  flex="1"
+                  value={finalTVL}
+                  min={0}
+                  max={10}
+                  step={0.1}
+                  onChange={(val) => setFinalTVL(val)}
+                >
+                  <SliderTrack bg="gray.200">
+                    <SliderFilledTrack bg="blue.500" />
+                  </SliderTrack>
+                  <SliderThumb boxSize={6} bg="blue.500" />
+                </Slider>
+                <Box ml={4}>
+                  <Text fontSize="xl" fontWeight="bold">{`$${finalTVL.toFixed(2)}M`}</Text>
+                </Box>
+              </Flex>
+            </Box>
             <Text fontSize="xl" mb={4}>
-              After 3 months, Degen Vault achieves a TVL of <strong>${finalTVL}M</strong>.
+              After 3 months, Degen Vault achieves a TVL of <strong>${finalTVL.toFixed(2)}M</strong>.
             </Text>
             <Text fontSize="xl" mb={4}>
               UP holders receive <strong>${(finalTVL * 0.1).toFixed(2)}</strong> per contract.
@@ -236,9 +260,9 @@ const Home = () => {
               How DeFiChain Benefits
             </Heading>
             <Text fontSize="xl" mb={4}>
-              By running this grants program, DeFiChain encourages the development of new projects that enhance its ecosystem.
-              Successful projects like Degen Vault attract more users and increase the utility of DeFiChain.
-              This leads to greater adoption, network effects, and ultimately, an increase in the value of the DeFiChain platform.
+		By using a market-governed grants program, DeFiChain can bootstrap
+		adoption of its chain without taking away time from it knows best:
+		building distributed systems.
             </Text>
           </Box>
         )}
