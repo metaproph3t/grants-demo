@@ -261,8 +261,7 @@ const Home = () => {
             </Heading>
             <Text fontSize="xl" mb={4}>
 		By using a market-governed grants program, DeFiChain can bootstrap
-		adoption of its chain without taking away time from it knows best:
-		building distributed systems.
+		adoption of its chain while offboarding decision-making to the market.
             </Text>
           </Box>
         )}
